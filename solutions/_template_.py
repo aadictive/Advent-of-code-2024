@@ -4,7 +4,7 @@ from utility.parseFile import *
 
 # Problem Statement: https://adventofcode.com/2024/day/X
 def solution(identifier):
-    input = parse_file("dayX.txt", identifier)
+    puzzle_input = parse_file("dayX.txt", identifier)
     # Write Solution here
 
     return 0

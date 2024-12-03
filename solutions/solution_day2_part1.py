@@ -5,11 +5,11 @@ from utility.parseFile import *
 
 # Problem Statement: https://adventofcode.com/2024/day/2
 def solution(identifier):
-    input = parse_file("day2.txt", identifier)
+    puzzle_input = parse_file("day2.txt", identifier)
     # Write Solution here
 
     safe_reports_count = 0
-    for inp in input:
+    for inp in puzzle_input:
         stripped_inp = inp.strip()
         str_list = stripped_inp.split(" ")
         int_list = [int(x) for x in str_list]
@@ -19,10 +19,10 @@ def solution(identifier):
     return safe_reports_count
 
 
-def are_reports_safe(input):
-    if check_int_if_sorted_asc_no_dup(input) or check_int_if_sorted_desc_no_dup(input):
-        for i in range(len(input) - 1):
-            if abs(input[i] - input[i + 1]) > 3:
+def are_reports_safe(reports):
+    if check_int_if_sorted_asc_no_dup(reports) or check_int_if_sorted_desc_no_dup(reports):
+        for i in range(len(reports) - 1):
+            if abs(reports[i] - reports[i + 1]) > 3:
                 return False
     else:
         return False

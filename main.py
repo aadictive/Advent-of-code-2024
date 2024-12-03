@@ -1,5 +1,6 @@
 from solutions import *
-import os, sys
+import os
+import sys
 
 base_path = "solutions/"
 
@@ -15,14 +16,14 @@ def print_solution(day, part):
                   eval(f"solution_day{day}_part{part}.execute_puzzle_file()"))
             print("#########################################")
     elif int(part) == 3:
-        for part in range(1, 3):
-            file_path = os.path.join(base_path, f"solution_day{day}_part{part}.py")
+        for part_idx in range(1, 3):
+            file_path = os.path.join(base_path, f"solution_day{day}_part{part_idx}.py")
             if os.path.exists(file_path):
                 print("#########################################")
-                print(f"Solution Day {day} Part {part} (example):",
-                      eval(f"solution_day{day}_part{part}.execute_example_file()"))
-                print(f"Solution Day {day} Part {part} (puzzle):",
-                      eval(f"solution_day{day}_part{part}.execute_puzzle_file()"))
+                print(f"Solution Day {day} Part {part_idx} (example):",
+                      eval(f"solution_day{day}_part{part_idx}.execute_example_file()"))
+                print(f"Solution Day {day} Part {part_idx} (puzzle):",
+                      eval(f"solution_day{day}_part{part_idx}.execute_puzzle_file()"))
                 print("#########################################")
     else:
         print("Invalid Selection!")
@@ -55,7 +56,7 @@ if __name__ == "__main__":
             exit(0)
         else:
             print("Invalid Selection!")
-            exit()
+            exit(0)
 
     match selection:
         case "all":

@@ -5,19 +5,19 @@ import re
 
 # Problem Statement: https://adventofcode.com/2024/day/3
 def solution(identifier):
-    input = parse_file("day3.txt", identifier)
+    puzzle_input = parse_file("day3.txt", identifier)
 
     # Write Solution here
-    sum = 0
+    resultant_sum = 0
     pattern = r"mul\([\d]{1,3},[\d]{1,3}\)|don't\(\)|do\(\)"
-    for inp in input:
+    for inp in puzzle_input:
         matches = re.findall(pattern, inp)
         for match in matches:
             if match.startswith("mul"):
                 product = multiply_instruction(match)
-                sum += product
+                resultant_sum += product
 
-    return sum
+    return resultant_sum
 
 
 def multiply_instruction(mul):
