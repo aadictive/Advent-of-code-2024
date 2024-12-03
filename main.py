@@ -1,27 +1,32 @@
 from solutions import *
 import os, sys
+
 base_path = "solutions/"
+
 
 def print_solution(day, part):
     if int(part) < 3:
         file_path = os.path.join(base_path, f"solution_day{day}_part{part}.py")
         if os.path.exists(file_path):
             print("#########################################")
-            print(f"Solution Day {day} Part {part} (example):", eval(f"solution_day{day}_part{part}.executeOnExampleFile()"))
-            print(f"Solution Day {day} Part {part} (puzzle):", eval(f"solution_day{day}_part{part}.executeOnPuzzleFile()"))
+            print(f"Solution Day {day} Part {part} (example):",
+                  eval(f"solution_day{day}_part{part}.execute_example_file()"))
+            print(f"Solution Day {day} Part {part} (puzzle):",
+                  eval(f"solution_day{day}_part{part}.execute_puzzle_file()"))
             print("#########################################")
     elif int(part) == 3:
-        for part in range (1,3):
+        for part in range(1, 3):
             file_path = os.path.join(base_path, f"solution_day{day}_part{part}.py")
             if os.path.exists(file_path):
                 print("#########################################")
                 print(f"Solution Day {day} Part {part} (example):",
-                      eval(f"solution_day{day}_part{part}.executeOnExampleFile()"))
+                      eval(f"solution_day{day}_part{part}.execute_example_file()"))
                 print(f"Solution Day {day} Part {part} (puzzle):",
-                      eval(f"solution_day{day}_part{part}.executeOnPuzzleFile()"))
+                      eval(f"solution_day{day}_part{part}.execute_puzzle_file()"))
                 print("#########################################")
     else:
         print("Invalid Selection!")
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -46,8 +51,8 @@ if __name__ == "__main__":
                 print("Exiting gracefully!")
                 exit(0)
         elif usr_selection == "0":
-                print("Exiting gracefully!")
-                exit(0)
+            print("Exiting gracefully!")
+            exit(0)
         else:
             print("Invalid Selection!")
             exit()

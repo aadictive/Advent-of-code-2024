@@ -1,6 +1,7 @@
 from constants import *
 from utility.parseFile import *
 
+
 # Problem Statement: https://adventofcode.com/2024/day/1
 def solution(identifier):
     input = parse_file("day1.txt", identifier)
@@ -16,13 +17,14 @@ def solution(identifier):
 
     sum = 0
     for l, r in zip(left_list, right_list):
-        sum += abs(l-r)
+        sum += abs(l - r)
 
     return sum
 
 
-def executeOnExampleFile():
+def execute_example_file():
     return solution(EXAMPLE_FILE_IDENTIFIER)
 
-def executeOnPuzzleFile():
+
+def execute_puzzle_file():
     return solution(PUZZLE_FILE_IDENTIFIER)

@@ -10,9 +10,9 @@ def solution(identifier):
     return 0
 
 
-def executeOnExampleFile():
+def execute_example_file():
     return solution(EXAMPLE_FILE_IDENTIFIER)
 
 
-def executeOnPuzzleFile():
+def execute_puzzle_file():
     return solution(PUZZLE_FILE_IDENTIFIER)
