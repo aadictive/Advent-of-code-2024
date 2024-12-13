@@ -26,6 +26,12 @@ class MyTestCase(unittest.TestCase):
         result = solution_day3_part2.execute_example_file()
         self.assertEqual(161, result)
 
+        result = solution_day4_part1.execute_example_file()
+        self.assertEqual(18, result)
+
+        result = solution_day4_part2.execute_example_file()
+        self.assertEqual(9, result)
+
     def test_puzzle_files(self):
         result = solution_day1_part1.execute_puzzle_file()
         self.assertEqual(2378066, result)
@@ -44,6 +50,12 @@ class MyTestCase(unittest.TestCase):
 
         result = solution_day3_part2.execute_puzzle_file()
         self.assertEqual(82733683, result)
+
+        result = solution_day4_part1.execute_puzzle_file()
+        self.assertEqual(2551, result)
+
+        result = solution_day4_part2.execute_puzzle_file()
+        self.assertEqual(1985, result)
 
     def tearDown(self):
         snapshot = tracemalloc.take_snapshot()
